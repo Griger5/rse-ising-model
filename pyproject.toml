@@ -8,6 +8,7 @@ dynamic = ["version"]
 description = "Project for RSE in Python for RCS"
 requires-python = ">=3.9"
 license = "GPL-3.0"
+readme = "README.md"
 dependencies = [
     "numpy",
     "numba"
