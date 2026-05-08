@@ -1,5 +1,5 @@
 import numpy as np
-from ising_model import init_random_grid, run_ising_model
+from ising_model.ising_model import init_random_grid, run_ising_model
 
 def test_init_random_grid_shape():
     grid = init_random_grid(10, 20)
