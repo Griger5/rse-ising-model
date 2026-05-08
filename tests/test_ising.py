@@ -1,5 +1,10 @@
 import numpy as np
+from numba import njit
 from ising_model import init_random_grid, run_ising_model
+
+@njit
+def seed_numba_random(seed):
+    np.random.seed(seed)
 
 def test_init_random_grid_shape():
     grid = init_random_grid(10, 20)
@@ -26,7 +31,7 @@ def test_run_ising_model_preserves_spin_values():
     assert np.all(np.logical_or(result == -1, result == 1))
 
 def test_low_temperature_increases_order():
-    np.random.seed(0)
+    seed_numba_random(0)
 
     grid = init_random_grid(50, 50)
 
