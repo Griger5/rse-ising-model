@@ -20,5 +20,8 @@ tests = [
 examples = [
     "matplotlib"
 ]
+docs = [
+    "pdoc"
+]
 
 [tool.setuptools_scm]
