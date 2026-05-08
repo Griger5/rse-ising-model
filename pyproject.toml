@@ -2,9 +2,15 @@
 requires = ["setuptools >= 77.0.3", "setuptools-scm==8.3.1"]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [project]
 name = "ising-model"
-dynamic = ["version"]
+version = "0.0.7"
 description = "Project for RSE in Python for RCS"
 requires-python = ">=3.9"
 license = "GPL-3.0"
@@ -24,6 +30,3 @@ examples = [
 docs = [
     "pdoc"
 ]
-
-[tool.setuptools_scm]
-local_scheme = "no-local-version"
