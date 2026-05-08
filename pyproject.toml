@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools >= 77.0.3", "setuptools-scm==8.3.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ising-model"
+dynamic = ["version"]
+description = "Project for RSE in Python for RCS"
+requires-python = ">=3.9"
+license = "GPL-3.0"
+dependencies = [
+    "numpy",
+    "numba"
+]
+
+[project.optional-dependencies]
+tests = [
+    "pytest"
+]
+examples = [
+    "matplotlib"
+]
+
+[tool.setuptools_scm]
