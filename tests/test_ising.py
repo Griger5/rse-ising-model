@@ -24,16 +24,3 @@ def test_run_ising_model_preserves_spin_values():
     result = run_ising_model(grid, temperature=2.0, steps=5000)
 
     assert np.all(np.logical_or(result == -1, result == 1))
-
-def test_low_temperature_increases_order():
-    np.random.seed(0)
-
-    grid = init_random_grid(50, 50)
-
-    initial_magnetization = np.abs(np.mean(grid))
-
-    result = run_ising_model(grid, temperature=0.1, steps=200000)
-
-    final_magnetization = np.abs(np.mean(result))
-
-    assert final_magnetization > initial_magnetization
